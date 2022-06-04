@@ -72,6 +72,7 @@ export default function OrderList() {
               <p className='total-items '>Total items</p>
               <p className='Total-Price '>Total Price</p>
               <p className='status '>status</p>
+              <p className='delete'>cancel</p>
               <p className='view '>view</p>
           </div>
           <div className='arrenge-table'>

@@ -606,7 +606,10 @@ th{
     background-color: #5861AE;
     color: white;
 }
-
+.table-list-data p{
+    width: 12%;
+    text-align: center;
+}
 
 .table-list{
     width: 97%;
@@ -667,7 +670,11 @@ border-radius: 4px;
 background: white;
 color: #4552C1;
 }
-
+.delete{
+    color: #EB1717;
+    font-size: 14px;
+    
+}
 .arrenge-table{
     display: flex;
     flex-direction: column-reverse;

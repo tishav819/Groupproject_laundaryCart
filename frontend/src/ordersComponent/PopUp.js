@@ -92,10 +92,12 @@ console.log(finaldata,"final")
     <div className="location">
       <h3>Store Address:</h3>
       <p>Near Phone Booth, 10th Cross</p>
+      <div className='under-line'></div>
     </div>
     <div className="location">
       <h3>Phone:</h3>
-      <p>+ 91 999 000 99 00</p>
+      <p>+919876543211</p>
+      <div className='under-line'></div>
     </div>
   </div > 
 

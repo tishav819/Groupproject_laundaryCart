@@ -57,10 +57,37 @@ const Popuplist = ({finaldata,handleClose}) => {
     </div>
     <div className="location">
       <h3>Phone:</h3>
-      <p>+ 91 999 000 99 00</p>
+      <p>+ 919876543211</p>
     </div>
   </div > 
+  <div className="address-infod">
+  <div id="circle"></div>
+    
+   <div className="locationn">
+   
+      
+      <p> Picked up</p>
+    </div>
+    <div id="circle"></div>
+    
+    <div className="locationn">
+      
+      <p> Washed</p>
+    </div>
+    <div id="circle"></div>
+    
+    <div className="locationn">
+      
+      <p> Ironed</p>
+    </div>
+    <div id="circle"></div>
 
+   
+    <div className="locationnn">
+      
+      <p> Delievred</p>
+    </div> 
+    </div>
   <h5 className="order-detail">Order Details</h5>
 
 <div className="summary-order">
@@ -111,7 +138,7 @@ return (<>
       
     </section>
 <footer className="foot">
-<button className="con-firm" type="submit" onClick={handleClose}>Close</button>
+<button className="con-firmm" type="submit" onClick={handleClose}>Cancel order</button>
 
  </footer>  
     </div>
