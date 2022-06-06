@@ -43,7 +43,7 @@ const createUser =async(req,res)=>{
         const authtoken =jwt.sign(data,JWT_SECRET)
 
         const success=true
-        res.send({success,authtoken})
+        res.send({success,authtoken,name:user.name})
 
     }else{
         res.status(400).json({error:"sorry this user alredy rigistered"})}
@@ -90,7 +90,7 @@ const checkLogin = async(req,res)=>{
 
     success=true
 
-    res.json({success,authtoken})
+    res.json({success,authtoken,name:user.name})
     }catch(err){
         console.log(err)
         res.status(500).json({error:"internal server error while login"})

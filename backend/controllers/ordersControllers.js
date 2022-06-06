@@ -1,8 +1,3 @@
-
-
-
-
-
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const Orders = require('../models/Orders')
@@ -33,21 +28,40 @@ const createOrder =async(req,res)=>{
     }
 }
 
-
-
-
-
-
-
 const getOrderList =async(req,res)=>{
     try{
     const orderlist =await Orders.find({user:req.user.id})
-    res.json(orderlist)
+   //const user = orderlist[1]._id
+   //console.log(user)
+    /*if (!orderlist){
+        res.json(
+            {order:"order not found"}
+        )
+    }*/
+    res.json(
+        orderlist)
     }catch(error){
         res.status(500).json({error:"internal server error at orders"})
     }
 
 }
 
+const deleteorder =async(req,res)=>{
+    try{
+    const idx = req.params.idx
+    console.log(idx)
+    const orderlist =await Orders.find({user:req.user.id})
+    const user = orderlist[idx]._id
+    console.log(user)
+    const orderlist1 =await Orders.findOneAndDelete({_id:user})
+    console.log(orderlist1)
+    
+    res.json(
+        {status:"success"}
+    )
+    }catch(error){
+        res.status(500).json({error:"internal server error at orders"})
+    }
+}
 
-module.exports={createOrder,getOrderList}
+module.exports={createOrder,getOrderList,deleteorder}

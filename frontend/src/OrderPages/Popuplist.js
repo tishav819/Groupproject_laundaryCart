@@ -5,13 +5,59 @@ import "../ordersComponent/modal.css"
 
 import React,{useState,useEffect} from  "react";
 import SummaryTable from "../ordersComponent/SummaryTable";
-const Popuplist = ({finaldata,handleClose}) => {
+import { useNavigate } from "react-router-dom";
+
+const Popuplist = ({idx,finaldata,handleClose}) => {
   
   const [subTotal, setsubTotal] = useState(0)
   const [finalOrdervalue, setfinalOrderValue] = useState(0)
   const [totalItems, settotalTtems] = useState(0)
 
+ 
+ 
+ 
+  /*const handleClose=()=>{
+    const delete_order =await fetch("http://localhost:5000/order/orderlist")  
+ }*/
+
+  let history = useNavigate();
+
   useEffect(() => {
+      let user=localStorage.getItem('token')
+      if(!user){
+      history("/")}
+  
+    
+  }, );
+
+
+  const [handledelete, sethandledelete] = useState([]);
+
+ 
+  useEffect(() => {
+      
+  fetch("http://localhost:5000/order/orderlist", {
+method: 'DELETE',
+
+headers: {
+  'Content-type': 'application/json; charset=UTF-8',
+  "auth-token":localStorage.getItem('token')
+},
+}).then((response)=>
+ response.json() 
+).then((data)=>{
+  console.log(data)
+  sethandledelete(data)
+}).catch((err)=>{
+  console.log(err)
+  
+})
+
+  }, []);
+ 
+ 
+ 
+ useEffect(() => {
     let totalval=0
     let itemsconut=0
     finaldata.forEach(element => {
@@ -26,7 +72,7 @@ const Popuplist = ({finaldata,handleClose}) => {
 
   }, [finaldata]);
 
-
+  
 
 
   return (
@@ -138,7 +184,7 @@ return (<>
       
     </section>
 <footer className="foot">
-<button className="con-firmm" type="submit" onClick={handleClose}>Cancel order</button>
+<button className="con-firmm" type="submit" onClick={handledelete}>Cancel order</button>
 
  </footer>  
     </div>

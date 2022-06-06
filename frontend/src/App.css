@@ -695,3 +695,40 @@ input[type='checkbox']{
   width: 20px;
   height: 20px;
 }
+
+.vl {
+
+    border-right: 2px solid #5861AE;
+    height: 140px;
+    padding-top:95px;
+    width:43px;
+    
+  }
+
+  .left-loginn{
+    width: 1050px;
+    height: 680px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+}
+.left-loginn h1{
+    text-align: left;
+    font-size: 100px ;
+    color: #5861AE;
+    text-transform: capitalize;
+    }
+.left-loginn p{
+    color: #565657;
+    font-size: 20px;
+    margin-top: 14px;
+}
+.vll {
+
+    border-right: 2px solid #5861AE;
+    height: 142px;
+    padding-top:95px;
+    width:146px;
+    
+  }
+
+
+

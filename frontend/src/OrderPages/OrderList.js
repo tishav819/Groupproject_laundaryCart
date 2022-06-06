@@ -77,9 +77,9 @@ export default function OrderList() {
           </div>
           <div className='arrenge-table'>
         {
-            allorders.map((ele,ind)=>{
+            allorders.map((ele,idx)=>{
                 return(
-                    <AllorderTable ele={ele} key={allorders._id}  />
+                    <AllorderTable idx={idx} ele={ele} key={allorders._id}  />
                 )
             })
         }</div>

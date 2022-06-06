@@ -2,9 +2,11 @@
 
 
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import OrderList from './OrderList';
 import Popuplist from './Popuplist';
 
-export default function AllorderTable({ele}) {
+export default function AllorderTable({ele,idx}) {
     const [isopenlist, setisopenlist] = useState(false);
     function handlesummary(){
         setisopenlist(!isopenlist)
@@ -22,10 +24,11 @@ export default function AllorderTable({ele}) {
               <p className='total-items '>{ele.totalItems}</p>
               <p className='Total-Price '>{ele.totalPrice}</p>
               <p className='status '>ready to deliver</p>
-              <p className='view '>🔍<i className='fa fa-eye'></i></p>
+              <p className='delete'>cancel order</p>
+              <p className='view '><i className='fa fa-eye'></i></p>
                 </div>
 
         {isopenlist ? 
-       <Popuplist finaldata={ele.orderItems} handleClose={handlesummary} />  :"" }
+       <Popuplist idx={idx} finaldata={ele.orderItems} handleClose={handlesummary} />  :"" }
   </div>;
 }

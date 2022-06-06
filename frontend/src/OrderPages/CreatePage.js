@@ -37,7 +37,7 @@ export default function CreatePage() {
             </div>
 
             <div className='create-sec'>
-            <p>Create new order</p>
+            <p>No Orders Available</p>
             <NavLink className="li" to={"/option"} ><button className='reg-btn'>Create</button></NavLink>
         </div>
 

@@ -7,7 +7,7 @@ export default function Login() {
     let history = useNavigate();
 
     const [newobject, setnewobject] = useState({email:"",password:""})
-    const [iseye, setiseye] = useState(false);
+    const [islock, setislock] = useState(false);
 
 
     function handlechange(e){
@@ -48,6 +48,7 @@ const response=  await fetch("http://localhost:5000/login", {
 
         if (data.success){
             localStorage.setItem('token',data.authtoken)
+            localStorage.setItem('namee',data.name)
             localStorage.setItem('user',JSON.stringify(newobject))
             
             // alert("rigisterd successfully")
@@ -78,8 +79,7 @@ const response=  await fetch("http://localhost:5000/login", {
 
         </div>
     </div>
-
-
+    <div class="vl"></div>
   <div className='right-login'>
       <div className='form-login'>
       <h3>SIGN IN</h3>
@@ -91,8 +91,8 @@ const response=  await fetch("http://localhost:5000/login", {
         </div>
         <div className='field'>
             <label htmlFor="password">Password</label>
-            <input type={!iseye?  "password":""} id='password'onChange={handlechange} name="password"/>
-            <i className='fa fa-eye'  onClick={()=>{setiseye(!iseye)}}> </i>
+            <input type={!islock?  "password":""} id='password'onChange={handlechange} name="password"/>
+            <i className='fa fa-eye'  onClick={()=>{setislock(!islock)}}> </i>
             <div className='under-line'></div>
             <div className='forgot'>
                 <p>Forgot Password?</p>

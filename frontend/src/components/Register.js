@@ -65,7 +65,7 @@ async function handlesubmit(e){
             localStorage.setItem('user',JSON.stringify(newobject))
             
 
-            history("/create")
+            history("/")
             
         }else{
             console.log(data)
@@ -91,14 +91,14 @@ async function handlesubmit(e){
       <p className='para-login'>Doorstep Wash & Dryclean service</p>
       <div className='btn-sec'>
           <p>Already Have An Account?</p>
-          <NavLink className="li" to={"/"} ><button className='reg-btn'>Login</button></NavLink>
+          <NavLink className="li" to={"/"} ><button className='reg-btn'>SignIn</button></NavLink>
 
       </div>
 
       </div>
   </div>
 
-
+<div class="vll"></div>
 <div className='right-reg'>
     <div className='form-login form-reg'>
 
